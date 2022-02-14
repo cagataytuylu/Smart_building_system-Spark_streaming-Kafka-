@@ -1,8 +1,8 @@
-""" 3. Spark streaming ile Kafka office-input topiğini consume ediniz. Modelinizi kullanarak
- hareketlilik bilgisini tahmin ediniz (odada aktivite var veya yok).
+""" Using Spark streaming, consume a Kafka office-input topic. 
+Estimate the mobility information (with or without activity in the room) using your model.
 
-4. Odada hareketlilik var ise bunu office-activity topiğine, hareketlilik yok ise
-office-no-activity topiğine produce ediniz."""
+If there is activity in the room, it should be produced to the office-activity subject;
+if there is no activity, it should be produced to the office-no-activity topic. """
 
 import findspark
 import warnings
@@ -61,7 +61,7 @@ pipeline_model_loaded = PipelineModel.load(
     "file:///home/train/atscale4/final_homework/atscale4_F_HW/saved_model/pipeline_model")
 transformed_df = pipeline_model_loaded.transform(lines3)
 
-# !Bu noktada iki topic yaratıyoruz.Kafka.md ye ekliyorum
+
 
 def sep_func(df, batchId):
     df.cache()
