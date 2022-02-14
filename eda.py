@@ -42,21 +42,11 @@ pd.set_option('display.max_rows', None)
 # %94'ü sıfırdır ve boş bir oda olduğunu gösterir.
 
 """
-Görevler:
-Opsiyon-1:
-.............
-1. Bu veri setini kullanarak CO2, humidity, temperature, light ve zaman bilgileri 
-bilinen bir odada herhangi bir aktivite veya hareketlilik olup olmadığını tahmin eden 
-bir makine öğrenmesi modeli geliştiriniz.
-
-2. Data-generator ile model geliştirirken kullandığınız test verisini, hedef değişkeni
- (pir) hariç tutarak Kafka office-input adında bir topic'e produce ediniz.
-
-3. Spark streaming ile Kafka office-input topiğini consume ediniz. Modelinizi kullanarak
- hareketlilik bilgisini tahmin ediniz (odada aktivite var veya yok).
-
-4. Odada hareketlilik var ise bunu office-activity topiğine, hareketlilik yok ise 
-office-no-activity topiğine produce ediniz.
+TODO:
+1. Using this data set, forecast if there is any activity or activity in a known room using CO2, humidity, temperature, light, and time information.
+2. Specify the test data, the goal variable, that you will use when creating the model with the data-generator.
+3. Use Spark streaming to consume a Kafka office-input topic. Estimate the mobility information using your model 
+4. If there is activity in the room, record it on the office-activity subject; if there is none, record it on the office-no-activity topic.
 
 """
 
